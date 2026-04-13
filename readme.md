@@ -73,7 +73,7 @@ Inclui:
 ## ⚠️ Observações
 
 - O envio do formulário **não garante a reserva automática**.
-- A confirmação deve ser feita posteriormente (ex: por e-mail ou backend).
+- A confirmação deve ser feita posteriormente por e-mail.
 - Este projeto é apenas um **modelo frontend (estático)**.
 
 ---
