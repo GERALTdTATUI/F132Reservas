@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reserva de horários para multidisciplinares</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="container" role="main">
+        <header class="header" aria-labelledby="form-title">
+            <h1 id="form-title" class="title">Reserva de horários para multidisciplinares</h1>
+            <p class="subtitle">Campos marcados com * são obrigatórios</p>
+            <div class="progress" aria-hidden="true"><i id="progressBar"></i></div>
+        </header>
+
+        <form id="reservaForm" class="card" novalidate>
+            <!-- STEP 1: Termo de ciência -->
+            <section class="section step active" data-step="1" aria-labelledby="step1-title">
+                <h2 id="step1-title" class="section-title">Termo de ciência</h2>
+                <div class="row muted" style="line-height:1.6">
+                    <p>
+                        Ao preencher e enviar este formulário para a reserva de horários no laboratório, você declara
+                        estar ciente de que a simples submissão do formulário não garante a confirmação da reserva. A
+                        confirmação está sujeita à disponibilidade e será informada posteriormente por e-mail.
+                    </p>
+                    <p>
+                        Além disso, ao confirmar sua reserva, você assume responsabilidade parcial por quaisquer
+                        incidentes que ocorram no laboratório durante o período reservado. Durante a reserva, é sua
+                        responsabilidade assegurar que todos os procedimentos de segurança e normas do laboratório sejam
+                        seguidos, independentemente de sua presença no local.
+                    </p>
+                    <p>
+                        Caso as condições estabelecidas por esse termo entrem em desacordo com as preferências do
+                        docente, não será possível realizar a reserva. Nesse caso, recomenda-se conversar com o
+                        coordenador do curso.
+                    </p>
+                </div>
+
+                <fieldset class="fieldset" aria-required="true">
+                    <legend class="required">Declaro que li e concordo com o termo</legend>
+                    <div class="radio-inline" role="radiogroup" aria-label="Consentimento">
+                        <label class="radio"><input type="radio" name="consent" value="sim" required> Estou ciente e de
+                            acordo</label>
+                        <label class="radio"><input type="radio" name="consent" value="nao"> Discordo</label>
+                    </div>
+                    <div id="consentError" class="error" hidden>É necessário concordar para prosseguir.</div>
+                </fieldset>
+            </section>
+
+            <!-- STEP 2: Dados da disciplina -->
+            <section class="section step" data-step="2" aria-labelledby="step2-title">
+                <h2 id="step2-title" class="section-title">Dados da disciplina</h2>
+                <div class="fieldset">
+                    <div>
+                        <label for="professor" class="required">Nome do professor (nome e sobrenome)</label>
+                        <input id="professor" name="professor" type="text" autocomplete="name" required
+                            class="focus-ring" />
+                    </div>
+                    <div>
+                        <label for="email" class="required">E-mail para contato</label>
+                        <input id="email" name="email" type="email" inputmode="email" autocomplete="email" required
+                            class="focus-ring" />
+                    </div>
+                    <div>
+                        <label for="disciplina" class="required">Nome da disciplina</label>
+                        <input id="disciplina" name="disciplina" type="text" required class="focus-ring" />
+                    </div>
+                    <div>
+                        <label for="turma" class="required">Turma da disciplina (Ex: 1º Automação)</label>
+                        <input id="turma" name="turma" type="text" required class="focus-ring" />
+                    </div>
+                    <div>
+                        <label for="itinerario" class="required">Itinerário disciplinar (Descreva quais conteúdos serão
+                            ministrados no laboratório reservado)</label>
+                        <textarea id="itinerario" name="itinerario" required class="focus-ring"></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <!-- STEP 3: Dados da reserva -->
+            <section class="section step" data-step="3" aria-labelledby="step3-title">
+                <h2 id="step3-title" class="section-title">Dados da reserva</h2>
+
+                <fieldset class="fieldset" aria-required="true">
+                    <legend class="required">Laboratório desejado
+                        <small class="muted" style="display:block; font-weight:400">Em caso de dúvida, consulte os
+                            horários disponíveis no site do laboratório.</small>
+                    </legend>
+                    <div class="radio-list" role="radiogroup" aria-label="Laboratório desejado">
+                        <label class="radio"><input type="radio" name="laboratorio" value="Lab. Multidisciplinar 1" required>
+                            Lab. Multidisciplinar 1</label>
+                        <label class="radio"><input type="radio" name="laboratorio" value="Lab. Multidisciplinar 2">
+                            Lab. Multidisciplinar 2</label>
+                        <label class="radio"><input type="radio" name="laboratorio" value="Lab. Multidisciplinar 3">
+                            Lab. Multidisciplinar 3</label>
+                        <label class="radio"><input type="radio" name="laboratorio" value="Lab. Multidisciplinar 4">
+                            Lab. Multidisciplinar 4</label>
+                        <label class="radio"><input type="radio" name="laboratorio" value="Lab. Multidisciplinar 5">
+                            Lab. Multidisciplinar 5</label>
+                        <label class="radio"><input type="radio" name="laboratorio" value="Lab. Multidisciplinar 6">
+                            Lab. Multidisciplinar 6</label>
+                        <label class="radio"><input type="radio" name="laboratorio" value="Lab. Multidisciplinar 7">
+                            Lab. Multidisciplinar 7</label>
+                        <label class="radio"><input type="radio" name="laboratorio" value="Lab. Multidisciplinar 8">
+                            Lab. Multidisciplinar 8</label>
+                        <label class="radio"><input type="radio" name="laboratorio" value="Lab. Multidisciplinar 9">
+                            Lab. Multidisciplinar 9</label>
+                        <label class="radio"><input type="radio" name="laboratorio" value="Sala Maker">
+                            Sala Maker</label>
+                    </div>
+                </fieldset>
+
+                <div class="fieldset" style="margin-top: 8px;">
+                    <div>
+                        <label for="data" class="required">Dia da aula</label>
+                        <input id="data" name="data" type="date" required class="focus-ring" />
+                    </div>
+                    <div>
+                        <label for="inicio" class="required">Horário de início da aula</label>
+                        <input id="inicio" name="inicio" type="time" required class="focus-ring" />
+                    </div>
+                    <div>
+                        <label for="termino" class="required">Horário de término da aula</label>
+                        <input id="termino" name="termino" type="time" required class="focus-ring" />
+                        <div id="timeError" class="error" hidden>O término deve ser depois do início.</div>
+                    </div>
+                </div>
+
+                <fieldset class="fieldset" style="margin-top: 8px;">
+                    <legend class="required">Ocorrências (se deseja repetir nas semanas seguintes)</legend>
+                    <div class="radio-inline" role="radiogroup" aria-label="Ocorrências">
+                        <label class="radio"><input type="radio" name="ocorrencias" value="1" required> 1</label>
+                        <label class="radio"><input type="radio" name="ocorrencias" value="2"> 2</label>
+                        <label class="radio"><input type="radio" name="ocorrencias" value="3"> 3</label>
+                    </div>
+                </fieldset>
+            </section>
+
+            <!-- NAVIGATION -->
+            <div class="nav">
+                <button type="button" class="btn ghost" id="prevBtn">Voltar</button>
+                <div style="display:flex; gap:8px;">
+                    <button type="button" class="btn" id="clearBtn" title="Limpar formulário">Limpar</button>
+                    <button type="button" class="btn primary" id="nextBtn">Avançar</button>
+                    <button type="submit" class="btn primary" id="submitBtn" style="display:none;">Enviar</button>
+                </div>
+            </div>
+        </form>
+
+        <p class="footnote">Nunca envie senhas por formulários. Este é um modelo HTML local inspirado no seu Google
+            Forms.</p>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
