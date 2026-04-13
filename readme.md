@@ -40,9 +40,9 @@ git clone https://github.com/seu-usuario/Reservas132.git
 2. Acesse a pasta:  
 cd Reservas132
 
-3. Abra o arquivo `index.html` no navegador.
+3. Substitua o valor de `api_url` pela [sua api](./example_api.md) pra reserva de horários
 
-4. Substitua o valor de `api_url` pela [sua api](./example_api.md) pra reserva de horários
+4. Abra o arquivo `index.html` no navegador.
 
 ---
 
