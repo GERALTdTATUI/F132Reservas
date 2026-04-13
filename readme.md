@@ -35,12 +35,14 @@ O sistema simula um formulário estruturado em etapas (multi-step form), permiti
 ## 🖥️ Como usar
 
 1. Clone este repositório:  
-git clone https://github.com/seu-usuario/seu-repositorio.git  
+git clone https://github.com/seu-usuario/Reservas132.git  
 
 2. Acesse a pasta:  
-cd seu-repositorio  
+cd Reservas132
 
 3. Abra o arquivo `index.html` no navegador.
+
+4. Substitua o valor de `api_url` pela [sua api](./example_api.md) pra reserva de horários
 
 ---
 
