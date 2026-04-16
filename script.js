@@ -28,6 +28,12 @@ function showStep(index) {
 function validateStep(index) {
     const step = steps[index];
     const inputs = step.querySelectorAll("input, select, textarea");
+    const consent = step.querySelector('input[name="consent"]:checked')?.value;
+
+    switch(consent) {
+        case "nao": document.getElementById("consentError").hidden = false; return false;
+        default: document.getElementById("consentError").hidden = true;
+    }
 
     for (let el of inputs) {
         if (!el.checkValidity()) {
